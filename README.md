@@ -39,3 +39,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 NextUI Documentation: https://nextui.org/docs/guide/introduction
 Read this to learn how to use the buttons and stuff that this toolkit provides. They're really cool.
+
+Tailwind CSS cheat sheet: https://nerdcave.com/tailwind-cheat-sheet
