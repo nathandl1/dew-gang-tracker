@@ -23,7 +23,9 @@ export default function Calendar({birthday, event, season}) {
             <div>05
                 {birthday && season=='Fall' ? <Image width='100%' src='/villagers/Elliott.png' alt=''/> : <></>}
             </div>
-            <div>06</div>
+            <div>06
+                <Image width={128} height={128} src='' alt=''/>
+            </div>
             <div>07
                 {birthday && season=='Spring' ? <Image width='100%' src='/villagers/Lewis.png' alt=''/> : <></>}
                 {birthday && season=='Winter' ? <Image width='100%' src='/villagers/Caroline.png' alt=''/> : <></>}
@@ -31,7 +33,9 @@ export default function Calendar({birthday, event, season}) {
             <div>08
                 {birthday && season=='Summer' ? <Image width='100%' src='/villagers/Gus.png' alt=''/> : <></>}
             </div>
-            <div>09</div>
+            <div>09
+                <Image width={128} height={128} src='' alt=''/>
+            </div>
             <div>10
                 {birthday && season=='Spring' ? <Image width='100%' src='/villagers/Vincent.png' alt=''/> : <></>}
                 {birthday && season=='Summer' ? <Image width='100%' src='/villagers/Maru.png' alt=''/> : <></>}
@@ -52,7 +56,9 @@ export default function Calendar({birthday, event, season}) {
             <div>15
                 {birthday && season=='Fall' ? <Image width='100%' src='/villagers/Sandy.png' alt=''/> : <></>}
             </div>
-            <div>16</div>
+            <div>16
+                <Image width={128} height={128} src='' alt=''/>
+            </div>
             <div>17
                 {birthday && season=='Summer' ? <Image width='100%' src='/villagers/Sam.png' alt=''/> : <></>}
                 {birthday && season=='Winter' ? <Image width='100%' src='/villagers/Wizard.png' alt=''/> : <></>}
@@ -89,7 +95,9 @@ export default function Calendar({birthday, event, season}) {
             <div>27
                 {birthday && season=='Spring' ? <Image width='100%' src='/villagers/Emily.png' alt=''/> : <></>}
             </div>
-            <div>28</div>
+            <div>28
+                <Image width={128} height={128} src='' alt=''/>
+            </div>
         </div>
     </div>
   );
