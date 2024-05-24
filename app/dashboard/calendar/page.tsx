@@ -47,7 +47,7 @@ export default function CalendarPage() {
       </Dropdown>
       </div>
       
-      <Calendar  birthday={birthday} event={false} season={season}/>
+      <Calendar  birthday={birthday} event={event} season={season}/>
     </div>
   )
 }
