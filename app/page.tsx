@@ -12,13 +12,13 @@ export default function Home() {
         <Image 
           src={'/Images/Background.png'} 
           alt={''}
-          width={2000}
-          height={1920}
+          width={7680}
+          height={4320}
           className='z-0'
           style={{objectFit: "cover"}}
         />
       </div>
-      <div className={styles.rightside}>
+      <div className={styles.form}>
         <h1 className = "text-lg md:text-4xl">PlaceHolder</h1>
         <br/>
         <SignUpForm />
