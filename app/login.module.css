@@ -5,7 +5,7 @@
     display: flex;
     height: 100vh;
 }
-.rightside {
+.form {
     width: 50%;
     z-index: 2;
     position: fixed;
@@ -18,7 +18,7 @@
     align-items: center;
     padding: 2%;
 }
-.rightside h1 {
+.form h1 {
     color: #000;
     font-family: 'Inter';
     font-size: 50px;
@@ -35,18 +35,7 @@
         position: relative;
         overflow: hidden;
     }
-    .rightside {
-        width: 50%;
-        z-index: 2;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: center;
-        padding: 2%;
-    }
-    .rightside h1 {
+    .form h1 {
         font-size: 30px;
     }
 }
