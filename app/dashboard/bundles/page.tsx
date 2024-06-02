@@ -11,7 +11,7 @@ import Vault from "./Vault"
 export default function BundlesPage() {
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
   return (
-    <Tabs aria-label="Options" color={'primary'}>
+    <Tabs aria-label="Options" color={'primary'} fullWidth = {true}>
       <Tab key="Crafts Room" title="Crafts Room">
         <Card style={{ height: '88dvh' }}>
           <CardBody className='text-lg mt-5'>
@@ -25,7 +25,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Crafts_Room.png"
               />
             </div>
-            <div className='my-auto flex md:flex-row'>
+            <div className='m-auto flex flex-col md:flex-row'>
               {CraftsRoom.map(bundle =>(
                 <div className = "m-2">
                   <Bundle
@@ -57,7 +57,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Pantry.png"
               />
             </div>
-            <div className='m-auto flex md:flex-row'>
+            <div className='m-auto flex flex-col md:flex-row'>
               {Pantry.map(bundle =>(
                 <div className = "m-2">
                   <Bundle
@@ -89,7 +89,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Fish_Tank.png"
               />
             </div>
-            <div className='m-auto flex md:flex-row'>
+            <div className='m-auto flex flex-col md:flex-row'>
               {FishTank.map(bundle =>(
                 <div className = "m-2">
                   <Bundle
@@ -121,7 +121,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Boiler_Room.png"
               />
             </div>
-            <div className='m-auto flex md:flex-row'>
+            <div className='m-auto flex flex-col md:flex-row'>
               {BoilerRoom.map(bundle =>(
                 <div className = "m-2">
                   <Bundle
@@ -153,7 +153,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Bulletin_Board.png"
               />
             </div>
-            <div className='m-auto flex md:flex-row'>
+            <div className='m-auto flex flex-col md:flex-row'>
               {BulletinBoard.map(bundle =>(
                 <div className = "m-2">
                   <Bundle
@@ -185,7 +185,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Vault_Room.png"
               />
             </div>
-            <div className='m-auto flex md:flex-row'>
+            <div className='m-auto flex flex-col md:flex-row'>
               {Vault.map(bundle =>(
                 <div className = "m-2">
                   <Bundle
@@ -213,7 +213,7 @@ export default function BundlesPage() {
                 src = "/Images/590px-JojaMart_Abandoned.png"
               />
             </div>
-            <div className='m-auto flex md:flex-row'>
+            <div className='m-auto flex flex-col md:flex-row'>
               <Card className = "max-w-[400px]">
                 <CardHeader className = "flex gap-3 bg-[#2563eb] justify-center">
                   <Image
