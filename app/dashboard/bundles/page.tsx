@@ -26,8 +26,8 @@ export default function BundlesPage() {
               />
             </div>
             <div className='m-auto flex flex-col md:flex-row'>
-              {CraftsRoom.map(bundle =>(
-                <div className = "m-2">
+              {CraftsRoom.map((bundle,index) =>(
+                <div key = {index} className = "m-2">
                   <Bundle
                     name= {bundle.name}
                     icon= {bundle.icon}
@@ -58,8 +58,8 @@ export default function BundlesPage() {
               />
             </div>
             <div className='m-auto flex flex-col md:flex-row'>
-              {Pantry.map(bundle =>(
-                <div className = "m-2">
+              {Pantry.map((bundle,index) =>(
+                <div key = {index} className = "m-2">
                   <Bundle
                     name= {bundle.name}
                     icon= {bundle.icon}
@@ -90,8 +90,8 @@ export default function BundlesPage() {
               />
             </div>
             <div className='m-auto flex flex-col md:flex-row'>
-              {FishTank.map(bundle =>(
-                <div className = "m-2">
+              {FishTank.map((bundle,index) =>(
+                <div key = {index} className = "m-2">
                   <Bundle
                     name= {bundle.name}
                     icon= {bundle.icon}
@@ -122,8 +122,8 @@ export default function BundlesPage() {
               />
             </div>
             <div className='m-auto flex flex-col md:flex-row'>
-              {BoilerRoom.map(bundle =>(
-                <div className = "m-2">
+              {BoilerRoom.map((bundle,index) =>(
+                <div key = {index} className = "m-2">
                   <Bundle
                     name= {bundle.name}
                     icon= {bundle.icon}
@@ -154,8 +154,8 @@ export default function BundlesPage() {
               />
             </div>
             <div className='m-auto flex flex-col md:flex-row'>
-              {BulletinBoard.map(bundle =>(
-                <div className = "m-2">
+              {BulletinBoard.map((bundle,index) =>(
+                <div key = {index} className = "m-2">
                   <Bundle
                     name= {bundle.name}
                     icon= {bundle.icon}
@@ -186,8 +186,8 @@ export default function BundlesPage() {
               />
             </div>
             <div className='m-auto flex flex-col md:flex-row'>
-              {Vault.map(bundle =>(
-                <div className = "m-2">
+              {Vault.map((bundle,index) =>(
+                <div key = {index} className = "m-2">
                   <Bundle
                     name= {bundle.name}
                     icon= {bundle.icon}

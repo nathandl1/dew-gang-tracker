@@ -10,7 +10,7 @@ export default function DashboardPage() {
     <div className='flex flex-col'>
       <div className='text-center'>
         <h1 className='text-3xl'>Welcome to the Home Page!</h1>
-        <p>You can find more information on our pages with the tabs below! If you know where you're going, feel free to use the menu bar instead.</p>
+        <p>You can find more information on our pages with the tabs below! If you know where you&apos;re going, feel free to use the menu bar instead.</p>
       </div>
       <div>
         <Tabs aria-label="Options">
@@ -18,7 +18,7 @@ export default function DashboardPage() {
             <Card>
               <CardBody className='text-lg'>
                 The Calendar is a customizeable calendar that is designed to allow you apply filters such as Birthdays and Events
-                to find information about a NPC's favorite gift or when a certain event may start! 
+                to find information about a NPC&apos;s favorite gift or when a certain event may start! 
                 <strong>Click the Calendar button on the left to navigate to the page!</strong>
                 <div>
                   <Image 

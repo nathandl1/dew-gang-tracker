@@ -1,9 +1,11 @@
 'use client'
 import React, { useState } from 'react'
 import {Popover, PopoverTrigger, PopoverContent, Button, Image} from "@nextui-org/react"
-
-export default function Icon({name, loved}) {
-    
+interface IconProps {
+  name: string;
+  loved:string[];
+}
+export default function Icon({name, loved}:IconProps) {
     const [visible, setVisible] = useState(false);
     const handler = () => setVisible(!visible);
 

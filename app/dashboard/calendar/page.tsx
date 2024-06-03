@@ -20,7 +20,7 @@ export default function CalendarPage() {
     setEvent(!event);
   }
 
-  const changeSeason = (newSeason) =>{
+  const changeSeason = (newSeason:string) =>{
     setSeason(newSeason);
   }
 
@@ -38,7 +38,7 @@ export default function CalendarPage() {
               {season}
             </Button>
           </DropdownTrigger>
-          <DropdownMenu aria-label="Static Actions" onAction={(key) => changeSeason(key)}>
+          <DropdownMenu aria-label="Static Actions" onAction={(key) => changeSeason(key.toString())}>
             <DropdownItem key="Spring">Spring</DropdownItem>
             <DropdownItem key="Summer">Summer</DropdownItem>
             <DropdownItem key="Fall">Fall</DropdownItem>

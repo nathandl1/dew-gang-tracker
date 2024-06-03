@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function FishMapPage() {
   return (
-    <div>FishMap Page</div>
+    <img src = "/Images/Map.png" className = "w-5/6 m-auto"></img>
   )
 }

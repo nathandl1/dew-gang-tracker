@@ -2,8 +2,12 @@
 import React from 'react'
 import {Image, Button} from "@nextui-org/react";
 import Icon from '@/app/components/icon';
-
-export default function Calendar({birthday, event, season}) {
+interface CalendarProps {
+  birthday:boolean;
+  event:boolean;
+  season: string;
+}
+export default function Calendar({birthday, event, season}:CalendarProps) {
     type CharacterDictionary = {
         [key: string]: Character;
     };

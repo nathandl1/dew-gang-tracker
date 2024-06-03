@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./login.module.css"
-import Card from "@nextui-org/react"
-import SignUpForm from './signup-form'
+import LoginForm from './login-form'
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 
@@ -19,9 +18,15 @@ export default function Home() {
         />
       </div>
       <div className={styles.form}>
-        <h1 className = "text-lg md:text-4xl">PlaceHolder</h1>
+        <h1>DewFish</h1>
         <br/>
-        <SignUpForm />
+        <LoginForm/>
+        <Link href='/signup' className="w-3/4">
+          <Button color="primary" variant="shadow" size="lg" className='mt-3' fullWidth = {true}>Sign Up</Button>
+        </Link> 
+        <Link href='/dashboard' className = "w-3/4">
+          <Button color="primary" variant="shadow" size="lg" className='mt-3' fullWidth = {true}>Continue As Guest</Button>
+        </Link>   
       </div>
     </main>
   );
