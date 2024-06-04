@@ -15,7 +15,7 @@ export default function Home() {
         <Link href='/signup' className="w-3/4">
           <Button color="primary" variant="shadow" size="lg" className='mt-3' fullWidth = {true}>Sign Up</Button>
         </Link> 
-        <Link href='/guestdashboard' className = "w-3/4">
+        <Link href='/guest-dashboard' className = "w-3/4">
           <Button color="primary" variant="shadow" size="lg" className='mt-3' fullWidth = {true}>Continue As Guest</Button>
         </Link>   
       </div>
