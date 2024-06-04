@@ -1,9 +1,9 @@
 'use client'
-import { Link } from '@nextui-org/react'
 import React from 'react'
 import {Tabs, Tab, Card, CardBody, Image} from "@nextui-org/react";
 import NextImage from "next/image";
-
+import {useRouter } from 'next/navigation';
+import axios from "axios";
 
 export default function DashboardPage() {
   return (

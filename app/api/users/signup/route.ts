@@ -1,7 +1,8 @@
 import {connect} from "@/dbConfig/dbConfig"; 
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
-var User = require("@/models/userModel")
+import User from "@/models/userModel"
+
 connect()
 
 export async function POST(request: NextRequest){
@@ -12,7 +13,7 @@ export async function POST(request: NextRequest){
 
         const user = await User.findOne({email})
         if(user){
-            return NextResponse.json({error:"User already exists"}, {status:400})
+            return NextResponse.json({error:"User already exists"}, {status:402})
         }
 
         const salt = await bcryptjs.genSalt(10);
@@ -26,8 +27,8 @@ export async function POST(request: NextRequest){
        const savedUser = await newUser.save()
        console.log(savedUser);
        
-       return NextResponse.json({message:"User created successfully"})
+       return NextResponse.json({message:"User created successfully", success:true, savedUser})
     }catch(error:any){
-        return NextResponse.json({error:error.message}, {status:500})
+        return NextResponse.json({error:error.message}, {status:502})
     }
 }

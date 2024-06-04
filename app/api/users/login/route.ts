@@ -1,16 +1,16 @@
 import {connect} from "@/dbConfig/dbConfig"; 
+import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken"
 
-var User = require("@/models/userModel")
 connect()
 
 export async function POST(request:NextRequest){
     try{
         const reqBody = await request.json()
-        const{email, password} = reqBody
-        console.log(reqBody)
+        const{email, password} = reqBody;
+        console.log(reqBody);
 
         const user = await User.findOne({email})
         if(!user){
@@ -19,14 +19,16 @@ export async function POST(request:NextRequest){
 
         const validPassword = await bcryptjs.compare(password, user.password)
         if(!validPassword){
-            return NextResponse.json({error:"Wrong Password"}, {status:400})
+            return NextResponse.json({error:"Wrong Password"}, {status:401})
         }
+
         const tokenData = {
             id: user._id,
             email:user.email,
         }
+
         const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {expiresIn:"1d"})
-        const response = NextResponse.json({message: "Login Successful"})
+        const response = NextResponse.json({message: "Login Successful", success:true})
         response.cookies.set("token", token, {
             httpOnly: true,
         })

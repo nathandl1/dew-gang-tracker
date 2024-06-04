@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./login.module.css"
 import LoginForm from './login-form'
 import { Button } from "@nextui-org/button";

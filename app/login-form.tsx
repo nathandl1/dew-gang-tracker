@@ -1,5 +1,5 @@
 "use client"
-import {useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import React from 'react'
 import {Button, Input} from "@nextui-org/react";
 import axios from "axios"
@@ -9,6 +9,7 @@ export default function LoginForm() {
     email:"",
     password:"",
   })
+
   const onLogin = async()=>{
     try {
       const response = await axios.post("api/users/login", user)
