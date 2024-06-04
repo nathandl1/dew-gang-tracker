@@ -5,8 +5,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex h-100vh flex-col">
-      <div className={styles.Background}>
-      </div>
+      <div className={styles.Background}></div>
       <div className={styles.form}>
         <h1>DewFish</h1>
         <br/>

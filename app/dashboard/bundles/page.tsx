@@ -25,7 +25,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Crafts_Room.png"
               />
             </div>
-            <div className='m-auto flex flex-col md:flex-row'>
+            <div className='m-auto grid md:grid-cols-3'>
               {CraftsRoom.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -57,7 +57,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Pantry.png"
               />
             </div>
-            <div className='m-auto flex flex-col md:flex-row'>
+            <div className='m-auto grid md:grid-cols-3'>
               {Pantry.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -89,7 +89,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Fish_Tank.png"
               />
             </div>
-            <div className='m-auto flex flex-col md:flex-row'>
+            <div className='m-auto grid md:grid-cols-3'>
               {FishTank.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -121,7 +121,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Boiler_Room.png"
               />
             </div>
-            <div className='m-auto flex flex-col md:flex-row'>
+            <div className='m-auto grid md:grid-cols-3'>
               {BoilerRoom.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -153,7 +153,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Bulletin_Board.png"
               />
             </div>
-            <div className='m-auto flex flex-col md:flex-row'>
+            <div className='m-auto grid md:grid-cols-3'>
               {BulletinBoard.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -185,7 +185,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Vault_Room.png"
               />
             </div>
-            <div className='m-auto flex flex-col md:flex-row'>
+            <div className='m-auto grid md:grid-cols-4'>
               {Vault.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
