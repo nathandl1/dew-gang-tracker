@@ -21,8 +21,8 @@ export default function SignUpForm() {
   }
   return (
     <form className='flex flex-col items-center w-3/4'>
-      <Input type="email" label = "Email" value = {user.email} onChange={(e) => setUser({...user, email: e.target.value})} isRequired = {true}/>
-      <Input type="password" label = "Password" className='pt-5' value = {user.password} onChange={(e) => setUser({...user, password: e.target.value})} isRequired = {true}/>
+      <Input type="email" label = "Email" value = {user.email} onChange={(e) => setUser({...user, email: e.target.value})}/>
+      <Input type="password" label = "Password" className='pt-5' value = {user.password} onChange={(e) => setUser({...user, password: e.target.value})}/>
       <Button color="primary" variant="shadow" size="lg" className='mt-3' fullWidth = {true} onClick = {onSignUp}>Register</Button>
     </form>
   )

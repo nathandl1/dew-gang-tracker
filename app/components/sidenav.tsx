@@ -1,8 +1,20 @@
+"use client"
+import {useRouter } from 'next/navigation';
 import Link from 'next/link';
 import NavLinks from './nav-links';
 import { PowerIcon } from '@heroicons/react/24/outline';
+import axios from "axios";
 
 export default function SideNav() {
+  const router = useRouter();
+  const Logout = async () =>{
+    try{
+      await axios.get('/api/users/logout')
+      router.push("/")
+    }catch(error:any){
+      console.log("Logout failed", error.message);
+    }
+  }
   return (
     <div className="flex h-full flex-col px-3 py-4 md:px-2">
       <Link
@@ -18,7 +30,7 @@ export default function SideNav() {
         <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
         <form>
           <Link href="/">
-          <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
+          <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3" onClick = {Logout}>
             <PowerIcon className="w-6" />
             <div className="hidden md:block">Sign Out</div>
           </button>
