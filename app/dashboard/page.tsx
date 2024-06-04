@@ -2,7 +2,6 @@
 import React from 'react'
 import {Tabs, Tab, Card, CardBody, Image} from "@nextui-org/react";
 import NextImage from "next/image";
-import styles from "../login.module.css"
 
 export default function DashboardPage() {
   return (

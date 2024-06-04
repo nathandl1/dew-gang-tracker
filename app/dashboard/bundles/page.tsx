@@ -15,7 +15,7 @@ export default function BundlesPage() {
       <Tab key="Crafts Room" title="Crafts Room">
         <Card style={{ height: '88dvh' }}>
           <CardBody className='text-lg mt-5'>
-            <div className='mx-auto flex md:flex-row'>
+            <div className='mx-auto flex flex-col md:flex-row'>
               <Image
                 alt = "Incomplete Crafts Room" 
                 src = "/Images/Community_Center_Crafts_Room.png"
@@ -47,7 +47,7 @@ export default function BundlesPage() {
       <Tab key="Pantry" title="Pantry">
         <Card style={{ height: '88dvh' }}>
           <CardBody className='text-lg mt-5'>
-            <div className='mx-auto flex md:flex-row'>
+            <div className='mx-auto flex flex-col md:flex-row'>
               <Image
                 alt = "Incomplete Pantry" 
                 src = "/Images/Community_Center_Pantry.png"
@@ -79,8 +79,8 @@ export default function BundlesPage() {
       <Tab key="Fish Tank" title="Fish Tank">
         <Card style={{ height: '88dvh' }}>
           <CardBody className='text-lg mt-5'>
-            <div className='mx-auto flex md:flex-row'>
-              <Image
+            <div className='mx-auto flex flex-col md:flex-row'>
+              <Image 
                 alt = "Incomplete Fish Tank" 
                 src = "/Images/Community_Center_Fish_Tank.png"
               />
@@ -111,7 +111,7 @@ export default function BundlesPage() {
       <Tab key="Boiler Room" title="Boiler Room">
         <Card style={{ height: '88dvh' }}>
           <CardBody className='text-lg mt-5'>
-            <div className='mx-auto flex md:flex-row'>
+            <div className='mx-auto flex flex-col md:flex-row'>
               <Image
                 alt = "Incomplete Boiler Room" 
                 src = "/Images/Community_Center_Boiler_Room.png"
@@ -143,7 +143,7 @@ export default function BundlesPage() {
       <Tab key="Bulletin Board" title="Bulletin Board">
         <Card style={{ height: '88dvh' }}>
           <CardBody className='text-lg mt-5'>
-            <div className='mx-auto flex md:flex-row'>
+            <div className='mx-auto flex flex-col md:flex-row items-center'>
               <Image
                 alt = "Incomplete Bulletin Board" 
                 src = "/Images/Community_Center_Bulletin_Board.png"
@@ -175,7 +175,7 @@ export default function BundlesPage() {
       <Tab key="Vault" title="Vault">
         <Card style={{ height: '88dvh' }}>
           <CardBody className='text-lg mt-5'>
-            <div className='mx-auto flex md:flex-row'>
+            <div className='mx-auto flex flex-col md:flex-row'>
               <Image
                 alt = "Incomplete Vault" 
                 src = "/Images/Community_Center_Vault.png"
@@ -207,7 +207,7 @@ export default function BundlesPage() {
       <Tab key="Abandoned JojaMart" title="Abandoned JojaMart">
         <Card style={{ height: '88dvh' }}>
           <CardBody className='text-lg mt-5'>
-            <div className='mx-auto flex md:flex-row'>
+            <div className='mx-auto'>
               <Image
                 alt = "Abandoned JojaMart" 
                 src = "/Images/590px-JojaMart_Abandoned.png"

@@ -4,6 +4,8 @@
     background-image: url("../public/Images/Background.png");
     width:100vw;
     height:100vh;
+    z-index: -10;
+    display:absolute;
 }
 .form {
     z-index: 2;
