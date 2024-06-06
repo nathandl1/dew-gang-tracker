@@ -28,12 +28,12 @@ export default function CalendarPage() {
     <div>
       Calendar Page
       <div>
-        <Button onClick={toggleBday}>BirfDay?</Button>
-        <Button onClick={toggleEvent}>Ebent?</Button>
+        <Button onClick={toggleBday}>Toggle Birthdays</Button>
+        <Button onClick={toggleEvent}>Toggle Events</Button>
         <Dropdown>
           <DropdownTrigger>
             <Button 
-              variant="bordered" 
+              color="secondary" variant='shadow' 
             >
               {season}
             </Button>
@@ -46,7 +46,7 @@ export default function CalendarPage() {
           </DropdownMenu>
       </Dropdown>
       </div>
-      
+      <br/>
       <Calendar  birthday={birthday} event={event} season={season}/>
     </div>
   )
