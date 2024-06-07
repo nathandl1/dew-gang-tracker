@@ -33,7 +33,7 @@ export default function SideNav() {
         href: '/dashboard/bundles', 
     },
     {
-        name: 'Fish Map',
+        name: 'Fish Finder',
         href: '/dashboard/fishfinder',
     }
 ];

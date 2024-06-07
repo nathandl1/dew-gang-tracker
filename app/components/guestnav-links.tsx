@@ -1,10 +1,10 @@
 'use client';
 
 import {
-  UserGroupIcon,
+  GiftIcon,
   HomeIcon,
-  DocumentDuplicateIcon,
-  MapIcon,
+  CalendarDaysIcon,
+  MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -21,17 +21,17 @@ const links = [
     {
         name: 'Calendar',
         href: '/guest-dashboard/calendar',
-        icon: DocumentDuplicateIcon,
+        icon: CalendarDaysIcon,
     },
     { 
         name: 'Bundles', 
         href: '/guest-dashboard/bundles', 
-        icon: UserGroupIcon 
+        icon: GiftIcon 
     },
     {
-        name: 'Fish Map',
+        name: 'Fish Finder',
         href: '/guest-dashboard/fishfinder',
-        icon: MapIcon
+        icon: MagnifyingGlassIcon
     }
 ];
 

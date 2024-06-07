@@ -24,7 +24,7 @@ export default function SideNav() {
         href: '/guest-dashboard/bundles', 
     },
     {
-        name: 'Fish Map',
+        name: 'Fish Finder',
         href: '/guest-dashboard/fishfinder',
     }
 ];
