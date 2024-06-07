@@ -3,9 +3,9 @@
     background-size:cover;
     background-image: url("../public/Images/Background.png");
     width:100vw;
-    height:100vh;
+    height:100dvh;
     z-index: -10;
-    display:absolute;
+    position:fixed;
 }
 .form {
     z-index: 2;

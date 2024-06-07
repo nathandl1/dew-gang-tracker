@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@nextui-org/react";
 import {CheckboxGroup, Checkbox} from "@nextui-org/react";
 interface BundleProps {
@@ -22,7 +23,7 @@ export default function Bundle({
     reward,
     rewardIcon
 }: BundleProps){
-    console.log(description);
+    const [selected, setSelected] = React.useState([]);
     return(
         <Card className = "max-w-[400px]">
             <CardHeader className = "flex gap-3 bg-[#2563eb] justify-center">
@@ -49,7 +50,7 @@ export default function Bundle({
                      />
                 </div>
                 <div className="ml-5">
-                    <CheckboxGroup>
+                    <CheckboxGroup value={selected} onValueChange={setSelected}>
                         {Array.isArray(description) &&  description.map(item => (
                             <Checkbox key={item} value={item}>
                                 <div className="flex items-center">
@@ -62,7 +63,7 @@ export default function Bundle({
                 </div>
             </CardBody>
             <Divider/>
-            <CardFooter>
+            <CardFooter className={selected.length === description.length ? "bg-success" : "bg-white"}>
                 <div className="flex items-center m-auto">
                     <Image src = {rewardIcon} alt = {reward} height={24} width={24}/>
                     <p className="ml-2">{reward}</p>

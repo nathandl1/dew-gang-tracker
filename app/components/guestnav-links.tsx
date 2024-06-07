@@ -15,22 +15,22 @@ import clsx from "clsx";
 const links = [
     { 
         name: 'Home', 
-        href: '/dashboard', 
+        href: '/guest-dashboard', 
         icon: HomeIcon 
     },
     {
         name: 'Calendar',
-        href: '/dashboard/calendar',
+        href: '/guest-dashboard/calendar',
         icon: DocumentDuplicateIcon,
     },
     { 
         name: 'Bundles', 
-        href: '/dashboard/bundles', 
+        href: '/guest-dashboard/bundles', 
         icon: UserGroupIcon 
     },
     {
         name: 'Fish Map',
-        href: '/dashboard/fishfinder',
+        href: '/guest-dashboard/fishfinder',
         icon: MapIcon
     }
 ];

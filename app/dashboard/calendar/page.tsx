@@ -26,7 +26,6 @@ export default function CalendarPage() {
 
   return (
     <div>
-      Calendar Page
       <div>
         <Button onClick={toggleBday}>Toggle Birthdays</Button>
         <Button onClick={toggleEvent}>Toggle Events</Button>

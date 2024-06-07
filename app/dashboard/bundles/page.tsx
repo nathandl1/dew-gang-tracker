@@ -11,9 +11,9 @@ import Vault from "./Vault"
 export default function BundlesPage() {
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
   return (
-    <Tabs aria-label="Options" color={'primary'} fullWidth = {true}>
+    <Tabs aria-label="Options" color={'primary'} fullWidth = {true} size="lg">
       <Tab key="Crafts Room" title="Crafts Room">
-        <Card style={{ height: '88dvh' }}>
+        <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
             <div className='mx-auto flex flex-col md:flex-row'>
               <Image
@@ -45,7 +45,7 @@ export default function BundlesPage() {
         </Card>  
       </Tab>
       <Tab key="Pantry" title="Pantry">
-        <Card style={{ height: '88dvh' }}>
+        <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
             <div className='mx-auto flex flex-col md:flex-row'>
               <Image
@@ -77,7 +77,7 @@ export default function BundlesPage() {
         </Card>
       </Tab>
       <Tab key="Fish Tank" title="Fish Tank">
-        <Card style={{ height: '88dvh' }}>
+        <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
             <div className='mx-auto flex flex-col md:flex-row'>
               <Image 
@@ -109,7 +109,7 @@ export default function BundlesPage() {
         </Card>
       </Tab>
       <Tab key="Boiler Room" title="Boiler Room">
-        <Card style={{ height: '88dvh' }}>
+        <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
             <div className='mx-auto flex flex-col md:flex-row'>
               <Image
@@ -141,16 +141,20 @@ export default function BundlesPage() {
         </Card>
       </Tab>
       <Tab key="Bulletin Board" title="Bulletin Board">
-        <Card style={{ height: '88dvh' }}>
+        <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
             <div className='mx-auto flex flex-col md:flex-row items-center'>
               <Image
                 alt = "Incomplete Bulletin Board" 
                 src = "/Images/Community_Center_Bulletin_Board.png"
+                width ={652}
+                height = {346}
               />
               <Image
                 alt = "Finished Bulletin Board" 
                 src = "/Images/Finished_Bulletin_Board.png"
+                width ={652}
+                height = {346}
               />
             </div>
             <div className='m-auto grid md:grid-cols-3'>
@@ -173,7 +177,7 @@ export default function BundlesPage() {
         </Card> 
       </Tab>
       <Tab key="Vault" title="Vault">
-        <Card style={{ height: '88dvh' }}>
+        <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
             <div className='mx-auto flex flex-col md:flex-row'>
               <Image
@@ -205,7 +209,7 @@ export default function BundlesPage() {
         </Card> 
       </Tab>
       <Tab key="Abandoned JojaMart" title="Abandoned JojaMart">
-        <Card style={{ height: '88dvh' }}>
+        <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
             <div className='mx-auto'>
               <Image

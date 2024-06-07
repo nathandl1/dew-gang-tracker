@@ -383,98 +383,98 @@ export default function Calendar({birthday, event, season}:CalendarProps) {
   return (
     <div>
         <div className="grid grid-cols-7 w-7/8">
-            <div className='border-2 border-black'>01
+            <div className='border-2 border-black bg-white'>01
                 {birthday && season=='Winter' ? <Icon name='Krobus' loved={findFavoriteGifts('Krobus')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>02
+            <div className='border-2 border-black bg-white'>02
                 {birthday && season=='Fall' ? <Icon name="Penny" loved={findFavoriteGifts('Penny')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>03
+            <div className='border-2 border-black bg-white'>03
                 {birthday && season=='Winter' ? <Icon name='Linus' loved={findFavoriteGifts('Linus')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>04
+            <div className='border-2 border-black bg-white'>04
                 {birthday && season=='Spring' ? <Icon name="Kent" loved={findFavoriteGifts('Kent')}/> : <></>}
                 {birthday && season=='Summer' ? <Icon name='Jas' loved={findFavoriteGifts('Jas')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>05
+            <div className='border-2 border-black bg-white'>05
                 {birthday && season=='Fall' ? <Icon name='Elliott' loved={findFavoriteGifts('Elliott')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>06
+            <div className='border-2 border-black bg-white'>06
                 <Image width={128} height={128} src='' alt=''/>
             </div>
-            <div className='border-2 border-black'>07
+            <div className='border-2 border-black bg-white'>07
                 {birthday && season=='Spring' ? <Icon name="Lewis" loved={findFavoriteGifts('Lewis')}/> : <></>}
                 {birthday && season=='Winter' ? <Icon name="Caroline" loved={findFavoriteGifts('Caroline')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>08
+            <div className='border-2 border-black bg-white'>08
                 {birthday && season=='Summer' ? <Icon name="Gus" loved={findFavoriteGifts('Gus')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>09
+            <div className='border-2 border-black bg-white'>09
                 <Image width={128} height={128} src='' alt=''/>
             </div>
-            <div className='border-2 border-black'>10
+            <div className='border-2 border-black bg-white'>10
                 {birthday && season=='Spring' ? <Icon name="Vincent" loved={findFavoriteGifts('Vincent')}/> : <></>}
                 {birthday && season=='Summer' ? <Icon name="Maru" loved={findFavoriteGifts('Maru')}/> : <></>}
                 {birthday && season=='Winter' ? <Icon name="Sebastian" loved={findFavoriteGifts('Sebastian')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>11
+            <div className='border-2 border-black bg-white'>11
                 {birthday && season=='Fall' ? <Icon name="Jodi" loved={findFavoriteGifts('Jodi')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>12</div>
-            <div className='border-2 border-black'>13
+            <div className='border-2 border-black bg-white'>12</div>
+            <div className='border-2 border-black bg-white'>13
                 {birthday && season=='Summer' ? <Icon name="Alex" loved={findFavoriteGifts('Alex')}/> : <></>}
                 {birthday && season=='Fall' ? <Icon name="Abigail" loved={findFavoriteGifts('Abigail')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>14
+            <div className='border-2 border-black bg-white'>14
                 {birthday && season=='Spring' ? <Icon name="Haley" loved={findFavoriteGifts('Haley')}/> : <></>}
                 {birthday && season=='Winter' ? <Icon name="Harvey" loved={findFavoriteGifts('Harvey')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>15
+            <div className='border-2 border-black bg-white'>15
                 {birthday && season=='Fall' ? <Icon name="Sandy" loved={findFavoriteGifts('Sandy')}/> : <></>}
                 {event && season == 'Spring' ? <Image width={48} radius='none' src='/icons/Iridium_Quality.png' alt=''/> : <></>}
             </div>
-            <div className='border-2 border-black'>16
+            <div className='border-2 border-black bg-white'>16
                 {event && season == 'Spring' ? <Image width={48} radius='none' src='/icons/Iridium_Quality.png' alt=''/> : <></>}
             </div>
-            <div className='border-2 border-black'>17
+            <div className='border-2 border-black bg-white'>17
                 {birthday && season=='Summer' ? <Icon name="Sam" loved={findFavoriteGifts('Sam')}/> : <></>}
                 {birthday && season=='Winter' ? <Icon name="Wizard" loved={findFavoriteGifts('Wizard')}/> : <></>}
                 {event && season == 'Spring' ? <Image width={48} radius='none' src='/icons/Iridium_Quality.png' alt=''/> : <></>}
             </div>
-            <div className='border-2 border-black'>18
+            <div className='border-2 border-black bg-white'>18
                 {!birthday ? <Image width={128} height={128} src='' alt=''/> : <></>}
                 {birthday && season=='Spring' ? <Icon name="Pam" loved={findFavoriteGifts('Pam')}/> : <></>}
                 {birthday && season=='Fall' ? <Icon name="Marnie" loved={findFavoriteGifts('Marnie')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>19
+            <div className='border-2 border-black bg-white'>19
                 {birthday && season=='Summer' ? <Icon name="Demetrius" loved={findFavoriteGifts('Demetrius')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>20
+            <div className='border-2 border-black bg-white'>20
                 {birthday && season=='Spring' ? <Icon name="Shane" loved={findFavoriteGifts('Shane')}/> : <></>}
                 {birthday && season=='Winter' ? <Icon name="Evelyn" loved={findFavoriteGifts('Evelyn')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>21
+            <div className='border-2 border-black bg-white'>21
                 {birthday && season=='Fall' ? <Icon name="Robin" loved={findFavoriteGifts('Robin')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>22
+            <div className='border-2 border-black bg-white'>22
                 {birthday && season=='Summer' ? <Icon name="Dwarf" loved={findFavoriteGifts('Dwarf')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>23
+            <div className='border-2 border-black bg-white'>23
                 {birthday && season=='Winter' ? <Icon name="Leah" loved={findFavoriteGifts('Leah')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>24
+            <div className='border-2 border-black bg-white'>24
                 {birthday && season=='Summer' ? <Icon name="Willy" loved={findFavoriteGifts('Willy')}/> : <></>}
                 {birthday && season=='Fall' ? <Icon name="George" loved={findFavoriteGifts('George')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>25</div>
-            <div className='border-2 border-black'>26
+            <div className='border-2 border-black bg-white'>25</div>
+            <div className='border-2 border-black bg-white'>26
                 {birthday && season=='Spring' ? <Icon name="Pierre" loved={findFavoriteGifts('Pierre')}/> : <></>}
                 {birthday && season=='Summer' ? <Icon name="Leo" loved={findFavoriteGifts('Leo')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>27
+            <div className='border-2 border-black bg-white'>27
                 {birthday && season=='Spring' ? <Icon name="Emily" loved={findFavoriteGifts('Emily')}/> : <></>}
             </div>
-            <div className='border-2 border-black'>28
+            <div className='border-2 border-black bg-white'>28
                 <Image width={128} height={128} src='' alt=''/>
             </div>
         </div>

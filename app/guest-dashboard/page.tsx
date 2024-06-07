@@ -1,16 +1,14 @@
 'use client'
-import { Link } from '@nextui-org/react'
 import React from 'react'
 import {Tabs, Tab, Card, CardBody, Image} from "@nextui-org/react";
 import NextImage from "next/image";
-
 
 export default function DashboardPage() {
   return (
     <div className='flex flex-col'>
       <div className='text-center'>
-        <h1 className='text-3xl'>Welcome to the Home Page!</h1>
-        <p>You can find more information on our pages with the tabs below! If you know where you&apos;re going, feel free to use the menu bar instead.</p>
+        <h1 className='text-3xl text-white'>Welcome to the Home Page!</h1>
+        <p className='text-white'>You can find more information on our pages with the tabs below! If you know where you&apos;re going, feel free to use the menu bar instead.</p>
       </div>
       <div>
         <Tabs aria-label="Options">
