@@ -8,10 +8,12 @@ import FishTank from "./FishTank"
 import BoilerRoom from "./BoilerRoom"
 import BulletinBoard from "./BulletinBoard"
 import Vault from "./Vault"
+import {MyTabs} from "@/app/components/MyTabs"
+
 export default function BundlesPage() {
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
   return (
-    <Tabs aria-label="Options" color={'primary'} fullWidth={true}>
+    <MyTabs aria-label="Options" color={'primary'} fullWidth={true} size='xl'>
       <Tab key="Crafts Room" title="Crafts Room">
         <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
@@ -260,7 +262,7 @@ export default function BundlesPage() {
           </CardBody>
         </Card>  
       </Tab>
-    </Tabs>
+    </MyTabs>
   )
 }
 
