@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import {Image, Button} from "@nextui-org/react";
-import Icon from '@/app/components/icon';
+import Icon from '@/app/dashboard/calendar/icon';
 interface CalendarProps {
   birthday:boolean;
   event:boolean;
