@@ -40,8 +40,8 @@ export default function SideNav() {
   return (
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth='full' height={"6vh"} className='bg-[#141312]'>
       <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-        <h1 className="font-bold text-white">DewFish</h1>
+        <NavbarMenuToggle className= "text-white" aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+        <h1 className="font-bold text-white"  style={{ fontSize: '3vh' }}>DewFish</h1>
       </NavbarContent>
 
       <NavbarContent className = "hidden sm:flex gap-4" justify='center'>

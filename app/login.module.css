@@ -28,14 +28,6 @@
     line-height: normal;
 }
 @media (max-width: 768px) {
-    .Background {
-        min-width: 100vw;
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-    }
     .form h1{
         font-size: 10vw;
     }

@@ -26,7 +26,7 @@ export default function CalendarPage() {
 
   return (
     <div>
-      <div>
+      <div className='flex'>
         <Button onClick={toggleBday}>Toggle Birthdays</Button>
         <Button onClick={toggleEvent}>Toggle Events</Button>
         <Dropdown>

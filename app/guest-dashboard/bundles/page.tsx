@@ -11,7 +11,7 @@ import Vault from "./Vault"
 export default function BundlesPage() {
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
   return (
-    <Tabs aria-label="Options" color={'primary'} fullWidth = {true} size="lg">
+    <Tabs aria-label="Options" color={'primary'} fullWidth={true}>
       <Tab key="Crafts Room" title="Crafts Room">
         <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
@@ -25,7 +25,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Crafts_Room.png"
               />
             </div>
-            <div className='m-auto grid md:grid-cols-3'>
+            <div className='m-auto grid md:grid-cols-2 lg:grid-cols-3'>
               {CraftsRoom.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -57,7 +57,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Pantry.png"
               />
             </div>
-            <div className='m-auto grid md:grid-cols-3'>
+            <div className='m-auto grid md:grid-cols-2 lg:grid-cols-3'>
               {Pantry.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -89,7 +89,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Fish_Tank.png"
               />
             </div>
-            <div className='m-auto grid md:grid-cols-3'>
+            <div className='m-auto grid md:grid-cols-2 lg:grid-cols-3'>
               {FishTank.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -121,7 +121,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Boiler_Room.png"
               />
             </div>
-            <div className='m-auto grid md:grid-cols-3'>
+            <div className='m-auto grid md:grid-cols-2 lg:grid-cols-3'>
               {BoilerRoom.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -157,7 +157,7 @@ export default function BundlesPage() {
                 height = {346}
               />
             </div>
-            <div className='m-auto grid md:grid-cols-3'>
+            <div className='m-auto grid md:grid-cols-2 lg:grid-cols-3'>
               {BulletinBoard.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle
@@ -189,7 +189,7 @@ export default function BundlesPage() {
                 src = "/Images/Finished_Vault_Room.png"
               />
             </div>
-            <div className='m-auto grid md:grid-cols-4'>
+            <div className='m-auto grid md:grid-cols-2 lg:grid-cols-4'>
               {Vault.map((bundle,index) =>(
                 <div key = {index} className = "m-2">
                   <Bundle

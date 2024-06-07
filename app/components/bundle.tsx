@@ -63,7 +63,7 @@ export default function Bundle({
                 </div>
             </CardBody>
             <Divider/>
-            <CardFooter className={selected.length === description.length + 1? "bg-success" : "bg-white"}>
+            <CardFooter className={selected.length === description.length + 1 ? "bg-success" : "bg-white"}>
                 <div className="flex items-center m-auto">
                     <Image src = {rewardIcon} alt = {reward} height={24} width={24}/>
                     <p className="ml-2">{reward}</p>
