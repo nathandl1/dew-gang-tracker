@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
-import {Tabs, Tab, Card, CardBody, Image} from "@nextui-org/react";
+import {Tab, Card, CardBody, Image} from "@nextui-org/react";
 import NextImage from "next/image";
+import {MyTabs} from "@/app/components/MyTabs"
 
 export default function DashboardPage() {
   return (
@@ -11,7 +12,7 @@ export default function DashboardPage() {
         <p className='text-white'>You can find more information on our pages with the tabs below! If you know where you&apos;re going, feel free to use the menu bar instead.</p>
       </div>
       <div>
-        <Tabs aria-label="Options">
+        <MyTabs aria-label="Options" size='xl'>
           <Tab key="calendar" title="Calendar">
             <Card>
               <CardBody className='text-lg'>
@@ -45,7 +46,7 @@ export default function DashboardPage() {
               </CardBody>
             </Card>  
           </Tab>
-        </Tabs>
+        </MyTabs>
       </div>
     </div>
   )

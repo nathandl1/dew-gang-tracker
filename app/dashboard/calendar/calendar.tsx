@@ -382,7 +382,7 @@ export default function Calendar({birthday, event, season}:CalendarProps) {
 
   return (
     <div>
-        <div className="grid grid-cols-7 w-7/8">
+        <div className="grid grid-cols-7 w-7/8 h-[75vh]">
             <div className='border-2 border-black bg-white'>01
                 {birthday && season=='Winter' ? <NPCIcon name='Krobus' loved={findFavoriteGifts('Krobus')}/> : <></>}
             </div>
