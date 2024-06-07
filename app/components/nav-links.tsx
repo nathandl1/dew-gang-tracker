@@ -29,8 +29,8 @@ const links = [
         icon: UserGroupIcon 
     },
     {
-        name: 'Fish Map',
-        href: '/dashboard/fishmap',
+        name: 'Fish Finder',
+        href: '/dashboard/fishfinder',
         icon: MapIcon
     }
 ];

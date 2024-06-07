@@ -3,7 +3,7 @@ import { Image, Radio, RadioGroup, Slider } from '@nextui-org/react'
 import React, { useState } from 'react'
 import Fishlist from '@/app/components/fishlist';
 
-export default function FishMapPage() {
+export default function FishFinderPage() {
   const [value, setValue] = useState(1);
   const [selected, setSelected] = useState("Sun");
   return (
