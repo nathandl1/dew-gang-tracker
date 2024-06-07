@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Fishlist from '@/app/components/fishlist';
 
 export default function FishFinderPage() {
-  const [value, setValue] = useState(1);
+  const [day, setDay] = useState<any>(1);
   const [selected, setSelected] = useState("Sun");
   return (
     <div className='bg-white'>
@@ -18,8 +18,10 @@ export default function FishFinderPage() {
         minValue={1} 
         defaultValue={1}
         className="max-w-md" 
-        value={value}
-        onChange={setValue}
+        value={day}
+        onChange={(event) => {
+          setDay(event);
+        }}
       />
       <RadioGroup
         label="Select Weather: "
@@ -34,7 +36,7 @@ export default function FishFinderPage() {
         <Radio value="Storm">Stormy</Radio>
         <Radio value="Snow">Snowy</Radio>
       </RadioGroup>
-      <Fishlist day={value} weather={selected} />
+      <Fishlist day={day} weather={selected} />
     </div>
   )
 }
