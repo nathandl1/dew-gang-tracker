@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@nextui-org/react";
 import {CheckboxGroup, Checkbox} from "@nextui-org/react";
 interface BundleProps {
@@ -11,6 +10,8 @@ interface BundleProps {
     description: string[];
     reward: string;
     rewardIcon: string;
+    userData:string[];
+    setUserData:(userData: string[]) => void;
 }
 
 export default function Bundle({
@@ -21,9 +22,22 @@ export default function Bundle({
     srcAltText,
     description,
     reward,
-    rewardIcon
+    rewardIcon,
+    userData,
+    setUserData
 }: BundleProps){
     const [selected, setSelected] = React.useState([""]);
+    const handleAddToUserData = (item:string) => {
+        userData.push(item); 
+        console.log(userData);
+        setUserData(userData);
+    }
+    const handleRemoveFromUserData = (item:string) =>{
+        const index = userData.indexOf(item);
+        userData.slice(index,1);
+        console.log(userData);
+        setUserData(userData);
+    }
     return(
         <Card className = "max-w-[400px]">
             <CardHeader className = "flex gap-3 bg-[#2563eb] justify-center">
@@ -52,7 +66,8 @@ export default function Bundle({
                 <div className="ml-5">
                     <CheckboxGroup value={selected} onValueChange={setSelected}>
                         {Array.isArray(description) &&  description.map(item => (
-                            <Checkbox key={item} value={item}>
+                            <Checkbox key={item +" "+ name} value = {item}
+                            onChange={(event: React.ChangeEvent<HTMLInputElement>)=>event.target.checked?handleAddToUserData(item +" "+ name):handleRemoveFromUserData(item +" "+ name)}>
                                 <div className="flex items-center">
                                     <Image src={`/icons/24px-${item}.png`} alt={item} height={24} width={24} />
                                     <span className="ml-2">{item}</span>

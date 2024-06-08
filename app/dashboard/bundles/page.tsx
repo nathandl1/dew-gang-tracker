@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {Tab, Card, CardHeader, CardBody, Divider, Image, CheckboxGroup, Checkbox} from "@nextui-org/react";
 import Bundle from '@/app/components/bundle';
+import axios from "axios";
 import CraftsRoom from "./CraftsRoom"
 import Pantry from "./Pantry"
 import FishTank from "./FishTank"
@@ -10,8 +11,21 @@ import BulletinBoard from "./BulletinBoard"
 import Vault from "./Vault"
 import {MyTabs} from "@/app/components/MyTabs"
 
+
 export default function BundlesPage() {
+  const [userData, setUserData] = useState<string[]>([]);
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
+  const getUserDetails = async() =>{
+    const res = await axios.get('/api/users/user')
+    console.log(res.data);
+    setUserData(res.data);
+  } 
+  useEffect(() => {
+    getUserDetails();
+  }, []);
+  const updateUserData = (newUserData: string[]) => {
+    setUserData(newUserData);
+  };
   return (
     <MyTabs aria-label="Options" color={'primary'} fullWidth={true} size = "xl">
       <Tab key="Crafts Room" title="Crafts Room">
@@ -39,6 +53,8 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData={userData}
+                    setUserData={updateUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -71,6 +87,8 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData={userData}
+                    setUserData={updateUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -103,6 +121,8 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData={userData}
+                    setUserData={updateUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -135,6 +155,8 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData={userData}
+                    setUserData={updateUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -171,6 +193,8 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData={userData}
+                    setUserData={updateUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -203,6 +227,8 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData={userData}
+                    setUserData={updateUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -247,7 +273,7 @@ export default function BundlesPage() {
                   <div className="ml-5">
                     <CheckboxGroup>
                         {Array.isArray(missingdescription) &&  missingdescription.map(item => (
-                            <Checkbox key={item} value={item}>
+                            <Checkbox key={item}>
                                 <div className="flex items-center">
                                     <Image src={`/icons/24px-${item}.png`} alt={item} height={24} width={24} />
                                     <span className="ml-2">{item}</span>

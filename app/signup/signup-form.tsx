@@ -9,6 +9,7 @@ export default function SignUpForm() {
   const [user, setUser] = React.useState({  
     email:"",
     password:"",
+    checkmarks:[],
   })
   const onSignUp = async()=>{
     try{
