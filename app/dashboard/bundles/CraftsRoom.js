@@ -45,7 +45,7 @@ export default[
         iconAltText: "Red Bundle",
         src: "/Images/Construction_Bundle.png",
         srcAltText: "Construction Bundle",
-        description: ["Wood", "Wood", "Stone", "Hardwood"],
+        description: ["Wood", "Stone", "Hardwood"],
         rewardIcon: "/icons/24px-Charcoal_Kiln.png",
         reward: "Charcoal Kiln"
     },
