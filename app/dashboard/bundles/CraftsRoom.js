@@ -5,7 +5,7 @@ export default[
         iconAltText: "Green Bundle",
         src: "/Images/Spring_Foraging_Bundle.png",
         srcAltText: "Spring Foraging Bundle",
-        description: ["Wild HorseRadish", "Daffodil", "Leek", "Dandelion"],
+        description: ["Wild Horseradish", "Daffodil", "Leek", "Dandelion"],
         rewardIcon: "/icons/24px-Spring_Seeds.png",
         reward: "Spring Seeds"
     },
