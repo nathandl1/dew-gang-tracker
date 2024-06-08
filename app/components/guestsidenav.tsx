@@ -44,7 +44,7 @@ export default function SideNav() {
       
       <NavbarContent justify = "end">
         <NavbarItem>
-          <Link href = "/signup" className="flex h-[4vh] w-full grow items-center justify-center gap-2 rounded-md p-3 text-sm text-white font-medium hover:bg-sky-100 hover:text-blue-600 md:p-2 md:px-3">
+          <Link href = "/signup" className="flex h-[4vh] w-full grow items-center justify-center gap-2 rounded-md p-3 text-sm text-white font-medium hover:text-blue-600 md:p-2 md:px-3">
             <div style={{ fontSize: '2vh' }}>Sign Up</div>
           </Link>
         </NavbarItem>
