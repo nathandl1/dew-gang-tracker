@@ -18,8 +18,8 @@ export default function BundlesPage() {
   const getUserDetails = async() =>{
     try{
       const res = await axios.get('/api/users/user')
-      setUserData(res.data);
-      console.log(userData);
+      console.log(res.data.data)
+      setUserData(res.data.data)
       console.log(Array.isArray(userData))
     }catch (error){
       console.error(error);
@@ -28,19 +28,18 @@ export default function BundlesPage() {
   useEffect(() => {
     getUserDetails();
   }, []);
+  const checkUserData = (text:string) =>{
+    return userData.includes(text)
+  }
   const addToUserData = (text:string) => {
-    console.log(Array.isArray(userData))
     setUserData([...userData,text])
-    console.log(userData)
   };
   const deleteFromUserData = (text:string) =>{
     setUserData(userData.filter(checkmark => checkmark !== text))
-    console.log(userData)
   }
   return (
     <MyTabs aria-label="Options" color={'primary'} fullWidth={true} size = "xl">
       <Tab key="Crafts Room" title="Crafts Room">
-        <Button onPress={() => addToUserData('apple')}></Button>
         <Card style={{ height: '80vh' }}>
           <CardBody className='text-lg mt-5'>
             <div className='mx-auto flex flex-col md:flex-row'>
@@ -67,6 +66,7 @@ export default function BundlesPage() {
                     reward= {bundle.reward}
                     add={addToUserData}
                     remove={deleteFromUserData}
+                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -101,6 +101,7 @@ export default function BundlesPage() {
                     reward= {bundle.reward}
                     add={addToUserData}
                     remove={deleteFromUserData}
+                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -135,6 +136,7 @@ export default function BundlesPage() {
                     reward= {bundle.reward}
                     add={addToUserData}
                     remove={deleteFromUserData}
+                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -169,6 +171,7 @@ export default function BundlesPage() {
                     reward= {bundle.reward}
                     add={addToUserData}
                     remove={deleteFromUserData}
+                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -207,6 +210,7 @@ export default function BundlesPage() {
                     reward= {bundle.reward}
                     add={addToUserData}
                     remove={deleteFromUserData}
+                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -241,6 +245,7 @@ export default function BundlesPage() {
                     reward= {bundle.reward}
                     add={addToUserData}
                     remove={deleteFromUserData}
+                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}

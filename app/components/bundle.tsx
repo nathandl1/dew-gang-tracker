@@ -12,6 +12,7 @@ interface BundleProps {
     rewardIcon: string;
     add:(text: string) => void;
     remove:(text:string) => void;
+    check:(text:string) => boolean;
 }
 
 export default function Bundle({
@@ -24,7 +25,8 @@ export default function Bundle({
     reward,
     rewardIcon,
     add,
-    remove
+    remove,
+    check
 }: BundleProps){
     const [selected, setSelected] = React.useState([""]);
     return(
@@ -55,7 +57,7 @@ export default function Bundle({
                 <div className="ml-5">
                     <CheckboxGroup value={selected} onValueChange={setSelected}>
                         {Array.isArray(description) &&  description.map(item => (
-                            <Checkbox key={item +" "+ name} value = {item}
+                            <Checkbox key={item +" "+ name} value = {item} isSelected={check(item + " " + name)}
                             onChange={(event: React.ChangeEvent<HTMLInputElement>)=>event.target.checked?add(item +" "+ name):remove(item +" "+ name)}>
                                 <div className="flex items-center">
                                     <Image src={`/icons/24px-${item}.png`} alt={item} height={24} width={24} />
