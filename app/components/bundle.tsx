@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@nextui-org/react";
 import {CheckboxGroup, Checkbox} from "@nextui-org/react";
 interface BundleProps {
@@ -10,7 +10,7 @@ interface BundleProps {
     description: string[];
     reward: string;
     rewardIcon: string;
-    userData:string[];
+    userData: string[];
     setUserData:(userData: string[]) => void;
 }
 
@@ -28,6 +28,7 @@ export default function Bundle({
 }: BundleProps){
     const [selected, setSelected] = React.useState([""]);
     const handleAddToUserData = (item:string) => {
+        console.log(Array.isArray(userData));
         Array.isArray(userData) && userData?.push(item); 
         console.log(userData);
         setUserData(userData);
@@ -38,6 +39,9 @@ export default function Bundle({
         console.log(userData);
         setUserData(userData);
     }
+    useEffect(() => {
+        console.log(Array.isArray(userData));
+    }, []);
     return(
         <Card className = "max-w-[400px]">
             <CardHeader className = "flex gap-3 bg-[#2563eb] justify-center">

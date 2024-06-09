@@ -17,7 +17,6 @@ export default function BundlesPage() {
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
   const getUserDetails = async() =>{
     const res = await axios.get('/api/users/user')
-    console.log(res.data);
     setUserData(res.data);
     console.log(userData);
   } 
