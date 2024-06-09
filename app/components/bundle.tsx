@@ -10,8 +10,8 @@ interface BundleProps {
     description: string[];
     reward: string;
     rewardIcon: string;
-    userData: string[];
-    setUserData:(userData: string[]) => void;
+    add:(text: string) => void;
+    remove:(text:string) => void;
 }
 
 export default function Bundle({
@@ -23,25 +23,10 @@ export default function Bundle({
     description,
     reward,
     rewardIcon,
-    userData,
-    setUserData
+    add,
+    remove
 }: BundleProps){
     const [selected, setSelected] = React.useState([""]);
-    const handleAddToUserData = (item:string) => {
-        console.log(Array.isArray(userData));
-        Array.isArray(userData) && userData?.push(item); 
-        console.log(userData);
-        setUserData(userData);
-    }
-    const handleRemoveFromUserData = (item:string) =>{
-        const index = userData?.indexOf(item);
-        Array.isArray(userData) && userData?.slice(index,1);
-        console.log(userData);
-        setUserData(userData);
-    }
-    useEffect(() => {
-        console.log(Array.isArray(userData));
-    }, []);
     return(
         <Card className = "max-w-[400px]">
             <CardHeader className = "flex gap-3 bg-[#2563eb] justify-center">
@@ -71,7 +56,7 @@ export default function Bundle({
                     <CheckboxGroup value={selected} onValueChange={setSelected}>
                         {Array.isArray(description) &&  description.map(item => (
                             <Checkbox key={item +" "+ name} value = {item}
-                            onChange={(event: React.ChangeEvent<HTMLInputElement>)=>event.target.checked?handleAddToUserData(item +" "+ name):handleRemoveFromUserData(item +" "+ name)}>
+                            onChange={(event: React.ChangeEvent<HTMLInputElement>)=>event.target.checked?add(item +" "+ name):remove(item +" "+ name)}>
                                 <div className="flex items-center">
                                     <Image src={`/icons/24px-${item}.png`} alt={item} height={24} width={24} />
                                     <span className="ml-2">{item}</span>
