@@ -16,9 +16,14 @@ export default function BundlesPage() {
   const [userData, setUserData] = useState<string[]>([]);
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
   const getUserDetails = async() =>{
-    const res = await axios.get('/api/users/user')
-    setUserData(res.data);
-    console.log(userData);
+    try{
+      const res = await axios.get('/api/users/user')
+      console.log(res.data);
+      setUserData(res.data);
+      console.log(userData);
+    }catch (error){
+      console.error(error);
+    }
   } 
   useEffect(() => {
     getUserDetails();
