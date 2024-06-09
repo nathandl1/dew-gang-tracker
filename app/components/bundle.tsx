@@ -28,13 +28,13 @@ export default function Bundle({
 }: BundleProps){
     const [selected, setSelected] = React.useState([""]);
     const handleAddToUserData = (item:string) => {
-        userData.push(item); 
+        Array.isArray(userData) && userData?.push(item); 
         console.log(userData);
         setUserData(userData);
     }
     const handleRemoveFromUserData = (item:string) =>{
-        const index = userData.indexOf(item);
-        userData.slice(index,1);
+        const index = userData?.indexOf(item);
+        Array.isArray(userData) && userData?.slice(index,1);
         console.log(userData);
         setUserData(userData);
     }

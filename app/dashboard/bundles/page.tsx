@@ -19,12 +19,14 @@ export default function BundlesPage() {
     const res = await axios.get('/api/users/user')
     console.log(res.data);
     setUserData(res.data);
+    console.log(userData);
   } 
   useEffect(() => {
     getUserDetails();
   }, []);
   const updateUserData = (newUserData: string[]) => {
     setUserData(newUserData);
+    console.log(userData);
   };
   return (
     <MyTabs aria-label="Options" color={'primary'} fullWidth={true} size = "xl">
