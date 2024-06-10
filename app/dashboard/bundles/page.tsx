@@ -39,13 +39,12 @@ export default function BundlesPage() {
   }
   const addToUserData = (text:string) => {
     setUserData([...userData,text])
-    console.log(userData)
   };
   const deleteFromUserData = (text:string) =>{
     setUserData(userData.filter(checkmark => checkmark !== text))
-    console.log(userData)
   }
   useEffect(() => {
+    console.log(userData)
   }, [userData]);
   return (
     <MyTabs aria-label="Options" color={'primary'} fullWidth={true} size = "xl">
@@ -74,6 +73,7 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
                     check = {checkUserData}
@@ -109,6 +109,7 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
                     check = {checkUserData}
@@ -144,6 +145,7 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
                     check = {checkUserData}
@@ -179,6 +181,7 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
                     check = {checkUserData}
@@ -218,6 +221,7 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
                     check = {checkUserData}
@@ -253,6 +257,7 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
                     check = {checkUserData}
@@ -282,6 +287,7 @@ export default function BundlesPage() {
                 description= {missingdescription}
                 rewardIcon= "/Images/Movie_Theater.png"
                 reward= "Movie Theater"
+                userData = {userData}
                 add={addToUserData}
                 remove={deleteFromUserData}
                 check = {checkUserData}

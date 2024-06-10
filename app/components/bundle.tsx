@@ -10,6 +10,7 @@ interface BundleProps {
     description: string[];
     reward: string;
     rewardIcon: string;
+    userData: string[];
     add:(text: string) => void;
     remove:(text:string) => void;
     check:(text:string[], id:string) => string[];
@@ -24,14 +25,11 @@ export default function Bundle({
     description,
     reward,
     rewardIcon,
+    userData,
     add,
     remove,
     check
 }: BundleProps){
-    const [selected, setSelected] = React.useState([""]);
-    useEffect(() => {
-        setSelected(check(description, name));
-    }, []);
     return(
         <Card className = "max-w-[400px]">
             <CardHeader className = "flex gap-3 bg-[#2563eb] justify-center">
@@ -58,7 +56,7 @@ export default function Bundle({
                      />
                 </div>
                 <div className="ml-5">
-                    <CheckboxGroup value={selected} onValueChange={setSelected}>
+                    <CheckboxGroup value={userData}>
                         {Array.isArray(description) &&  description.map(item => (
                             <Checkbox key={item +" "+ name} value = {item + " " + name}
                             onChange={(event: React.ChangeEvent<HTMLInputElement>)=>event.target.checked?add(item +" "+ name):remove(item +" "+ name)}>
@@ -72,7 +70,7 @@ export default function Bundle({
                 </div>
             </CardBody>
             <Divider/>
-            <CardFooter className={selected.length === description.length + 1 ? "bg-success" : "bg-white"}>
+            <CardFooter className={description.every(item => userData.includes(item + " " + name))? "bg-success" : "bg-white"}>
                 <div className="flex items-center m-auto">
                     <Image src = {rewardIcon} alt = {reward} height={24} width={24}/>
                     <p className="ml-2">{reward}</p>
