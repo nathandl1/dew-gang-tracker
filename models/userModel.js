@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a password"]
     },
+    checkmarks:{
+        type: [String],
+        default: [],
+    },
     forgotPasswordToken: String,
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,

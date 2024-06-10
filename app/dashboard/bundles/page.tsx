@@ -15,6 +15,7 @@ import {MyTabs} from "@/app/components/MyTabs"
 export default function BundlesPage() {
   const [userData, setUserData] = useState<string[]>([]);
   const [userId, setUserId] = useState("");
+  const [counter, setCounter] = useState(0);
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
   const getUserDetails = async() =>{
     try{
@@ -47,7 +48,8 @@ export default function BundlesPage() {
   }, []);
   useEffect(() => {
     console.log(userData);
-    saveUserData();
+    if (counter > 0){saveUserData();}
+    setCounter(prevCounter => prevCounter + 1);
   }, [userData]);
   return (
     <MyTabs aria-label="Options" color={'primary'} fullWidth={true} size = "xl">
