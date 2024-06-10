@@ -9,10 +9,10 @@ connect()
 export async function POST(request:NextRequest){
     try{
         const reqBody = await request.json()
-        const{email, password} = reqBody;
+        const{username, password} = reqBody;
         console.log(reqBody);
 
-        const user = await User.findOne({email})
+        const user = await User.findOne({username})
         if(!user){
             return NextResponse.json({error:"User does not exist"}, {status:400})
         }
@@ -24,7 +24,7 @@ export async function POST(request:NextRequest){
 
         const tokenData = {
             id: user._id,
-            email:user.email,
+            username:user.username,
         }
 
         const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {expiresIn:"1d"})

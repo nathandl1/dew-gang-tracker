@@ -6,7 +6,7 @@ import axios from "axios"
 export default function LoginForm() {
   const router = useRouter();
   const [user, setUser] = React.useState({
-    email:"",
+    username:"",
     password:"",
   })
 
@@ -21,7 +21,7 @@ export default function LoginForm() {
   }
   return (
     <form className='flex flex-col items-center w-3/4'>
-      <Input type="email" label = "Email" value = {user.email} onChange={(e) => setUser({...user, email: e.target.value})}/>
+      <Input type="username" label = "Username" value = {user.username} onChange={(e) => setUser({...user, username: e.target.value})}/>
       <Input type="password" label = "Password" className='pt-5' value = {user.password} onChange={(e) => setUser({...user, password: e.target.value})} onKeyDown={(e) => {if (e.key === 'Enter') {onLogin()}}}/>
       <Button color="primary" variant="shadow" size="lg" className='mt-3'fullWidth = {true} onClick = {onLogin}>Login</Button>
     </form>

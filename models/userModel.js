@@ -1,9 +1,9 @@
 import mongoose from "mongoose"
 
 const userSchema = new mongoose.Schema({
-    email:{
+    username:{
         type: String,
-        required: [true, "Please provide an email"],
+        required: [true, "Please provide a username"],
         unique: true,
     },
     password:{
@@ -14,10 +14,6 @@ const userSchema = new mongoose.Schema({
         type: [String],
         default: [],
     },
-    forgotPasswordToken: String,
-    forgotPasswordTokenExpiry: Date,
-    verifyToken: String,
-    verifyTokenExpiry:Date,
 })
 
 const User = mongoose.models.users || mongoose.model("users", userSchema);
