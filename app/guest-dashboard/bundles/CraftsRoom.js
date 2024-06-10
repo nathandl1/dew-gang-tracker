@@ -5,7 +5,7 @@ export default[
         iconAltText: "Green Bundle",
         src: "/Images/Spring_Foraging_Bundle.png",
         srcAltText: "Spring Foraging Bundle",
-        description: ["Wild HorseRadish", "Daffodil", "Leek", "Dandelion"],
+        description: ["Wild Horseradish", "Daffodil", "Leek", "Dandelion"],
         rewardIcon: "/icons/24px-Spring_Seeds.png",
         reward: "Spring Seeds"
     },
@@ -45,7 +45,7 @@ export default[
         iconAltText: "Red Bundle",
         src: "/Images/Construction_Bundle.png",
         srcAltText: "Construction Bundle",
-        description: ["Wood", "Wood", "Stone", "Hardwood"],
+        description: ["Wood", "Stone", "Hardwood"],
         rewardIcon: "/icons/24px-Charcoal_Kiln.png",
         reward: "Charcoal Kiln"
     },

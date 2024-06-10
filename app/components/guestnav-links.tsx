@@ -46,14 +46,14 @@ export default function NavLinks() {
             key={link.name}
             href={link.href}
             className={clsx(
-              'flex h-[4vh] grow items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:py-2 md:px-[0.25vw]',
+              'flex h-[4vh] grow items-center justify-center gap-2 rounded-md text-sm font-medium hover:text-blue-600 md:flex-none md:justify-start md:py-2 md:px-[0.25vw]',
               {
-                'bg-sky-100 text-blue-600': pathname === link.href,
+                'text-blue-600': pathname === link.href,
               },
             )}
           >
             <LinkIcon className="w-[3vh] text-white"/>
-            <p className="hidden md:block text-white" style={{ fontSize: '2vh' }}>{link.name}</p>
+            <p className="hidden md:block" style={{ fontSize: '2vh', color: pathname === link.href ? '#3B82F6' : 'white' }}>{link.name}</p>
           </Link>
         );
       })}

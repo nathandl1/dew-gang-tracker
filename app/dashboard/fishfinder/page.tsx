@@ -24,6 +24,7 @@ export default function FishFinderPage() {
         <Radio value="Summer">Summer</Radio>
         <Radio value="Fall">Fall</Radio>
         <Radio value="Winter">Winter</Radio>
+        <Radio value="All">All</Radio>
       </RadioGroup>
       <RadioGroup
         label="Select Weather: "

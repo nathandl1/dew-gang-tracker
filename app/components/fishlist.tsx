@@ -26,12 +26,14 @@ const columns = [
 export default function Fishlist({season, weather, time}:FishProps) {
   const timeArray:string[] = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm', '1am', '2am'];
   function searched(value:any){
-    return (time >= value.start && time <= value.end) && (value.season == "All" || season == value.season) && (value.weather=="Any" || season == value.season);
+    return (time >= value.start && time <= value.end) && (season == value.season) && (value.weather=="Any" || weather == value.weather);
   }
   const filtered = fish.filter(searched);
   return (
-    <div>
-      <Table aria-label="Example table with dynamic content">
+    <div className='h-96'>
+      <Table aria-label="Example table with dynamic content" 
+      isHeaderSticky
+      className='h-96'>
         <TableHeader columns={columns}>
           {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
         </TableHeader>
