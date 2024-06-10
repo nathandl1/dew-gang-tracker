@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
-import {Tab, Card, CardHeader, CardBody, Divider, Image, CheckboxGroup, Checkbox} from "@nextui-org/react";
+import React, { useState, useEffect} from 'react'
+import {Tab, Card, CardBody, Image} from "@nextui-org/react";
 import Bundle from '@/app/components/bundle';
+import axios from "axios";
 import CraftsRoom from "./CraftsRoom"
 import Pantry from "./Pantry"
 import FishTank from "./FishTank"
@@ -10,8 +11,44 @@ import BulletinBoard from "./BulletinBoard"
 import Vault from "./Vault"
 import {MyTabs} from "@/app/components/MyTabs"
 
+
 export default function BundlesPage() {
+  const [userData, setUserData] = useState<string[]>([]);
+  const [userId, setUserId] = useState("");
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
+  const getUserDetails = async() =>{
+    try{
+      const res = await axios.get('/api/users/user')
+      setUserData(res.data.data)
+      setUserId(res.data.id)
+    }catch (error){
+      console.error(error);
+    }
+  } 
+  const saveUserData = async() =>{
+    try{
+      const response = await axios.post('/api/users/saveCheckmarks', {
+        id: userId,
+        checkmarks: userData
+      })
+      console.log(response.data)
+    }catch (error){
+      console.error(error);
+    }
+  }
+  const addToUserData = (text:string) => {
+    setUserData([...userData,text])
+  };
+  const deleteFromUserData = (text:string) =>{
+    setUserData(userData.filter(checkmark => checkmark !== text))
+  }
+  useEffect(() => {
+    getUserDetails();
+  }, []);
+  useEffect(() => {
+    console.log(userData);
+    saveUserData();
+  }, [userData]);
   return (
     <MyTabs aria-label="Options" color={'primary'} fullWidth={true} size = "xl">
       <Tab key="Crafts Room" title="Crafts Room">
@@ -39,6 +76,9 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
+                    add={addToUserData}
+                    remove={deleteFromUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -71,6 +111,9 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
+                    add={addToUserData}
+                    remove={deleteFromUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -103,6 +146,9 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
+                    add={addToUserData}
+                    remove={deleteFromUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -135,6 +181,9 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
+                    add={addToUserData}
+                    remove={deleteFromUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -171,6 +220,9 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
+                    add={addToUserData}
+                    remove={deleteFromUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -203,6 +255,9 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
+                    userData = {userData}
+                    add={addToUserData}
+                    remove={deleteFromUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -219,45 +274,20 @@ export default function BundlesPage() {
                 src = "/Images/590px-JojaMart_Abandoned.png"
               />
             </div>
-            <div className='m-auto flex flex-col md:flex-row'>
-              <Card className = "max-w-[400px]">
-                <CardHeader className = "flex gap-3 bg-[#2563eb] justify-center">
-                  <Image
-                      alt="Purple Bundle"
-                      src = "/icons/32px-Bundle_Purple.png"
-                      height={36}
-                      radius="sm"
-                      width={36}
-                  />
-                  <div className="flex flex-col">
-                    <p className="text-md text-white font-bold">The Missing Bundle</p>
-                  </div>
-                </CardHeader>
-                <Divider/>
-                <CardBody className = "flex-row">
-                  <div style={{ display: 'grid', placeItems: 'center' }}>
-                    <Image
-                     alt="The Missing Bundle"
-                     src = "/Images/The_Missing_Bundle.png"
-                     height={125}
-                     radius="sm"
-                     width={125}
-                     />
-                  </div>
-                  <div className="ml-5">
-                    <CheckboxGroup>
-                        {Array.isArray(missingdescription) &&  missingdescription.map(item => (
-                            <Checkbox key={item} value={item}>
-                                <div className="flex items-center">
-                                    <Image src={`/icons/24px-${item}.png`} alt={item} height={24} width={24} />
-                                    <span className="ml-2">{item}</span>
-                                </div>
-                            </Checkbox>
-                        ))}
-                    </CheckboxGroup>
-                  </div>
-                </CardBody>
-              </Card>
+            <div className = "m-auto">
+              <Bundle
+                name= "The Missing Bundle"
+                icon= "/icons/32px-Bundle_Purple.png"
+                iconAltText= "Purple Bundle"
+                src= "/Images/The_Missing_Bundle.png"
+                srcAltText= "The Missing Bundle"
+                description= {missingdescription}
+                rewardIcon= "/Images/Movie_Theater.png"
+                reward= "Movie Theater"
+                userData = {userData}
+                add={addToUserData}
+                remove={deleteFromUserData}
+              ></Bundle>
             </div>
           </CardBody>
         </Card>  
