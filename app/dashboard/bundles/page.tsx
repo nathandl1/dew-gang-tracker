@@ -28,8 +28,12 @@ export default function BundlesPage() {
   useEffect(() => {
     getUserDetails();
   }, []);
-  const checkUserData = (text:string[]) =>{
-    const checked = text.filter(item => userData.includes(item));
+  const checkUserData = (text:string[], id:string) =>{
+    const modified = text.map(item=> item + " " + id)
+    console.log(modified)
+    const test = ['Grape Summer Foraging Bundle', 'Leek Spring Foraging Bundle']
+    const checked = modified.filter(item => test.includes(item));
+    console.log("checked")
     console.log(checked)
     return checked
   }
