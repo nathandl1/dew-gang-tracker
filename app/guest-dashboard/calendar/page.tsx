@@ -2,7 +2,7 @@
 import React from 'react'
 import Calendar from './calendar'
 import { useState } from 'react'
-import { Button } from '@nextui-org/react';
+import { MyButton } from '@/app/components/MyButton'
 import {  Dropdown,  DropdownTrigger,  DropdownMenu,  DropdownSection,  DropdownItem} from "@nextui-org/dropdown";
 
 
@@ -27,18 +27,18 @@ export default function CalendarPage() {
   return (
     <div>
       <div className='flex'>
-        <Button onClick={toggleBday}>Toggle Birthdays</Button>
-        <Button onClick={toggleEvent}>Toggle Events</Button>
+        <MyButton onClick={toggleBday} size='xl'>Toggle Birthdays</MyButton>
+        <MyButton onClick={toggleEvent} size='xl'>Toggle Events</MyButton>
         <Dropdown>
           <DropdownTrigger>
-            <Button 
-              color="secondary" variant='shadow' 
+            <MyButton 
+              color="secondary" variant='shadow' size='xl' 
             >
               {season}
-            </Button>
+            </MyButton>
           </DropdownTrigger>
           <DropdownMenu aria-label="Static Actions" onAction={(key) => changeSeason(key.toString())}>
-            <DropdownItem key="Spring">Spring</DropdownItem>
+            <DropdownItem key="Spring" className=''>Spring</DropdownItem>
             <DropdownItem key="Summer">Summer</DropdownItem>
             <DropdownItem key="Fall">Fall</DropdownItem>
             <DropdownItem key="Winter">Winter</DropdownItem>
