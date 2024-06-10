@@ -36,7 +36,7 @@ export default function DashboardPage() {
             <Card>
               <CardBody className='text-lg'>
                 The Bundles page is designed to help you with your collection journey through the community center! <br/>
-                Here you'll find a checklist of all the items you'll need for each bundle within each room. Plus the reward you can receive when you complete the bundle! <br/>
+                Here you&aposll find a checklist of all the items you&aposll need for each bundle within each room. Plus the reward you can receive when you complete the bundle! <br/>
                 <strong>Select the Bundles Page at the top menu to navigate there!</strong>
                 <Image src='/Images/Community_Center.png' alt=''></Image>
               </CardBody>
