@@ -1,6 +1,6 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import {Button, Tab, Card, CardHeader, CardBody, Divider, Image, CheckboxGroup, Checkbox} from "@nextui-org/react";
+import React, { useState, useEffect} from 'react'
+import {Tab, Card, CardBody, Image} from "@nextui-org/react";
 import Bundle from '@/app/components/bundle';
 import axios from "axios";
 import CraftsRoom from "./CraftsRoom"
@@ -14,28 +14,27 @@ import {MyTabs} from "@/app/components/MyTabs"
 
 export default function BundlesPage() {
   const [userData, setUserData] = useState<string[]>([]);
+  const [userId, setUserId] = useState("");
   const missingdescription: string[] = ["Wine", "Dinosaur Mayonnaise", "Prismatic Shard", "Ancient Fruit", "Void Salmon", "Caviar"];
   const getUserDetails = async() =>{
     try{
       const res = await axios.get('/api/users/user')
-      console.log(res.data.data)
       setUserData(res.data.data)
-      console.log(Array.isArray(userData))
+      setUserId(res.data.id)
     }catch (error){
       console.error(error);
     }
   } 
-  useEffect(() => {
-    getUserDetails();
-  }, []);
-  const checkUserData = (text:string[], id:string) =>{
-    const modified = text.map(item=> item + " " + id)
-    console.log(modified)
-    const test = ['Grape Summer Foraging Bundle', 'Leek Spring Foraging Bundle']
-    const checked = modified.filter(item => test.includes(item));
-    console.log("checked")
-    console.log(checked)
-    return checked
+  const saveUserData = async() =>{
+    try{
+      const response = await axios.post('/api/users/saveCheckmarks', {
+        id: userId,
+        checkmarks: userData
+      })
+      console.log(response.data)
+    }catch (error){
+      console.error(error);
+    }
   }
   const addToUserData = (text:string) => {
     setUserData([...userData,text])
@@ -44,7 +43,11 @@ export default function BundlesPage() {
     setUserData(userData.filter(checkmark => checkmark !== text))
   }
   useEffect(() => {
-    console.log(userData)
+    getUserDetails();
+  }, []);
+  useEffect(() => {
+    console.log(userData);
+    saveUserData();
   }, [userData]);
   return (
     <MyTabs aria-label="Options" color={'primary'} fullWidth={true} size = "xl">
@@ -76,7 +79,6 @@ export default function BundlesPage() {
                     userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
-                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -112,7 +114,6 @@ export default function BundlesPage() {
                     userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
-                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -148,7 +149,6 @@ export default function BundlesPage() {
                     userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
-                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -184,7 +184,6 @@ export default function BundlesPage() {
                     userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
-                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -224,7 +223,6 @@ export default function BundlesPage() {
                     userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
-                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -260,7 +258,6 @@ export default function BundlesPage() {
                     userData = {userData}
                     add={addToUserData}
                     remove={deleteFromUserData}
-                    check = {checkUserData}
                   ></Bundle>
                 </div>
               ))}
@@ -290,7 +287,6 @@ export default function BundlesPage() {
                 userData = {userData}
                 add={addToUserData}
                 remove={deleteFromUserData}
-                check = {checkUserData}
               ></Bundle>
             </div>
           </CardBody>

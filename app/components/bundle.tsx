@@ -13,7 +13,6 @@ interface BundleProps {
     userData: string[];
     add:(text: string) => void;
     remove:(text:string) => void;
-    check:(text:string[], id:string) => string[];
 }
 
 export default function Bundle({
@@ -28,7 +27,6 @@ export default function Bundle({
     userData,
     add,
     remove,
-    check
 }: BundleProps){
     return(
         <Card className = "max-w-[400px]">
