@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
-import {Tabs, Tab, Card, CardHeader, CardBody, Divider, Image, CheckboxGroup, Checkbox} from "@nextui-org/react";
-import Bundle from '@/app/components/bundle';
+import {Tab, Card, CardBody, Image} from "@nextui-org/react";
+import Bundle from '@/app/components/guestbundle';
 import CraftsRoom from "./CraftsRoom"
 import Pantry from "./Pantry"
 import FishTank from "./FishTank"
@@ -219,45 +219,17 @@ export default function BundlesPage() {
                 src = "/Images/590px-JojaMart_Abandoned.png"
               />
             </div>
-            <div className='m-auto flex flex-col md:flex-row'>
-              <Card className = "max-w-[400px]">
-                <CardHeader className = "flex gap-3 bg-[#2563eb] justify-center">
-                  <Image
-                      alt="Purple Bundle"
-                      src = "/icons/32px-Bundle_Purple.png"
-                      height={36}
-                      radius="sm"
-                      width={36}
-                  />
-                  <div className="flex flex-col">
-                    <p className="text-md text-white font-bold">The Missing Bundle</p>
-                  </div>
-                </CardHeader>
-                <Divider/>
-                <CardBody className = "flex-row">
-                  <div style={{ display: 'grid', placeItems: 'center' }}>
-                    <Image
-                     alt="The Missing Bundle"
-                     src = "/Images/The_Missing_Bundle.png"
-                     height={125}
-                     radius="sm"
-                     width={125}
-                     />
-                  </div>
-                  <div className="ml-5">
-                    <CheckboxGroup>
-                        {Array.isArray(missingdescription) &&  missingdescription.map(item => (
-                            <Checkbox key={item} value={item}>
-                                <div className="flex items-center">
-                                    <Image src={`/icons/24px-${item}.png`} alt={item} height={24} width={24} />
-                                    <span className="ml-2">{item}</span>
-                                </div>
-                            </Checkbox>
-                        ))}
-                    </CheckboxGroup>
-                  </div>
-                </CardBody>
-              </Card>
+            <div className = "m-auto">
+              <Bundle
+                name= "The Missing Bundle"
+                icon= "/icons/32px-Bundle_Purple.png"
+                iconAltText= "Purple Bundle"
+                src= "/Images/The_Missing_Bundle.png"
+                srcAltText= "The Missing Bundle"
+                description= {missingdescription}
+                rewardIcon= "/Images/Movie_Theater.png"
+                reward= "Movie Theater"
+              ></Bundle>
             </div>
           </CardBody>
         </Card>  

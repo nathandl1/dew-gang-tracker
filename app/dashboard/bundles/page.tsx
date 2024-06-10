@@ -78,9 +78,9 @@ export default function BundlesPage() {
                     description= {bundle.description}
                     rewardIcon= {bundle.rewardIcon}
                     reward= {bundle.reward}
-                    userData = {userData}
-                    add={addToUserData}
-                    remove={deleteFromUserData}
+                    userData= {userData}
+                    add= {addToUserData}
+                    remove= {deleteFromUserData}
                   ></Bundle>
                 </div>
               ))}
