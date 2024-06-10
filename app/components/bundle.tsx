@@ -12,7 +12,7 @@ interface BundleProps {
     rewardIcon: string;
     add:(text: string) => void;
     remove:(text:string) => void;
-    check:(text:string) => boolean;
+    check:(text:string[]) => string[];
 }
 
 export default function Bundle({
@@ -29,6 +29,9 @@ export default function Bundle({
     check
 }: BundleProps){
     const [selected, setSelected] = React.useState([""]);
+    useEffect(() => {
+        setSelected(check(description));
+    }, []);
     return(
         <Card className = "max-w-[400px]">
             <CardHeader className = "flex gap-3 bg-[#2563eb] justify-center">
@@ -57,7 +60,7 @@ export default function Bundle({
                 <div className="ml-5">
                     <CheckboxGroup value={selected} onValueChange={setSelected}>
                         {Array.isArray(description) &&  description.map(item => (
-                            <Checkbox key={item +" "+ name} value = {item} isSelected={check(item + " " + name)}
+                            <Checkbox key={item +" "+ name} value = {item}
                             onChange={(event: React.ChangeEvent<HTMLInputElement>)=>event.target.checked?add(item +" "+ name):remove(item +" "+ name)}>
                                 <div className="flex items-center">
                                     <Image src={`/icons/24px-${item}.png`} alt={item} height={24} width={24} />
