@@ -25,8 +25,10 @@ export default function NPCIcon({name, loved}:NPCData) {
           <div></div>
         </PopoverTrigger>
         <PopoverContent>
-          <div>
+          <h1 className = "font-bold">
             {name}&apos;s Loved Gifts:
+          </h1>
+          <div>
             <ol>
                 {loved.map((gift) => {
                     return (
