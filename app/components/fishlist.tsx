@@ -30,10 +30,10 @@ export default function Fishlist({season, weather, time}:FishProps) {
   }
   const filtered = fish.filter(searched);
   return (
-    <div className='h-96'>
+    <div className='h-fit overflow-auto'> 
       <Table aria-label="Example table with dynamic content" 
       isHeaderSticky
-      className='h-96'>
+      className='h-full'>
         <TableHeader columns={columns}>
           {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
         </TableHeader>
