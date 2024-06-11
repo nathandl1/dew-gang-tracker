@@ -18,14 +18,10 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will run the development server, see below for the deployed build
 
 ## Deployed Website
+deployed with vercel by using npm i vercel and connecting the git repository to vercel
 
 https://dew-gang-tracker.vercel.app/
 
-## Added By Nathan
-
-NextUI Documentation: https://nextui.org/docs/guide/introduction
-Read this to learn how to use the buttons and stuff that this toolkit provides. They're really cool.
-
-Tailwind CSS cheat sheet: https://nerdcave.com/tailwind-cheat-sheet
